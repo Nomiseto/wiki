@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+10.times do
+  article = Article.new(
+    title:    "#{Faker::Games::StreetFighter.character}, in #{Faker::Games::StreetFighter.stage}",
+    content: "#{Faker::Games::StreetFighter.character} said #{Faker::Games::StreetFighter.quote} , #{Faker::Games::StreetFighter.move} "
+  )
+  article.save!
+end
+
